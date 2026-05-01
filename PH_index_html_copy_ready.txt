@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0, user-scalable=yes" name="viewport"/>
+  <title>
+   EnhanCel Business Plan
+  </title>
+  <style>
+   :root{
+  --navy:#0D1B3E; --blue:#1E4080; --gold:#F5C842; --gold2:#E8A020;
+  --green:#2E7D32; --purple:#6C4BA8; --white:#FFFFFF;
+  --muted:rgba(255,255,255,.74); --muted2:rgba(255,255,255,.48);
+  --line:rgba(255,255,255,.10); --card:rgba(255,255,255,.05); --card2:rgba(255,255,255,.08);
+  --shadow:0 18px 40px rgba(0,0,0,.18); --radius:18px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(245,200,66,.10), transparent 26%),
+    radial-gradient(circle at bottom right, rgba(30,64,128,.24), transparent 34%),
+    linear-gradient(180deg,#0A1431 0%,#0D1B3E 100%);
+  color:var(--white);
+}
+.header{position:sticky;top:0;z-index:50;background:rgba(10,20,49,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(245,200,66,.16)}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 16px 10px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:136px;height:34px;display:flex;align-items:center;justify-content:flex-start;overflow:visible}
+.logo img{display:block;width:100%;height:auto}
+.brand h1{margin:0;font-size:16px}
+.brand p{margin:2px 0 0;font-size:11px;color:var(--gold)}
+.header-right{display:flex;align-items:center;gap:10px}
+.badge{font-size:12px;padding:7px 10px;border-radius:999px;border:1px solid rgba(245,200,66,.20);background:rgba(245,200,66,.08);color:var(--gold);white-space:nowrap}
+.lang-toggle{display:flex;gap:4px;padding:4px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid var(--line)}
+.lang-btn{border:none;cursor:pointer;padding:7px 12px;border-radius:999px;background:transparent;color:rgba(255,255,255,.7);font-weight:700;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
+.lang-btn.active{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#10203F}
+.tabs{display:flex;overflow:auto hidden;scrollbar-width:none;border-top:1px solid rgba(255,255,255,.04)}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:1 0 auto;min-width:118px;padding:12px 14px;border:none;background:transparent;color:rgba(255,255,255,.58);cursor:pointer;border-bottom:2px solid transparent}
+.tab.active{color:var(--gold);border-bottom-color:var(--gold);background:linear-gradient(180deg, rgba(245,200,66,.06), transparent)}
+.wrap{max-width:1120px;margin:0 auto;padding:18px 14px 28px}
+.panel{display:none}
+.panel.active{display:block}
+.hero{padding:22px 18px;border-radius:24px;background:linear-gradient(135deg, rgba(30,64,128,.50), rgba(13,27,62,.76));border:1px solid rgba(245,200,66,.18);box-shadow:var(--shadow);margin-bottom:16px}
+.hero .eyebrow{display:inline-block;font-size:11px;color:var(--gold);letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+.hero h2{margin:0 0 8px;font-size:24px;line-height:1.2}
+.hero p{margin:0;color:var(--muted);line-height:1.7;font-size:14px}
+.country-mark{display:flex;flex-direction:column;align-items:center;gap:5px;padding:5px 8px;border-radius:8px;background:rgba(255,255,255,.07);border:1px solid rgba(245,200,66,.18);color:var(--gold);font-weight:400;font-size:10px;line-height:1;letter-spacing:.04em;white-space:nowrap}
+.flag-philippines{position:relative;width:52px;height:20px;flex:0 0 20px;border-radius:2px;overflow:hidden;box-shadow:0 0 0 1px rgba(255,255,255,.18) inset;background:linear-gradient(to bottom,#0038A8 0 50%,#CE1126 50% 100%)}
+.flag-philippines:before{content:'';position:absolute;left:0;top:0;width:0;height:0;border-top:10px solid transparent;border-bottom:10px solid transparent;border-left:23px solid #fff}
+.flag-sun{position:absolute;left:7px;top:7px;width:6px;height:6px;border-radius:50%;background:#FCD116;z-index:1}
+.flag-star{position:absolute;color:#FCD116;font-size:6px;line-height:1;z-index:1}
+.flag-star.one{left:3px;top:2px}.flag-star.two{left:3px;bottom:1px}.flag-star.three{left:17px;top:8px}
+.grid{display:grid;gap:14px}
+.grid.three{grid-template-columns:1fr}
+@media(min-width:820px){.grid.three{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:820px){.grid.two{grid-template-columns:repeat(2,1fr)}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 15px}
+.card h3,.card h4{margin:0 0 10px}
+.card p{margin:0;color:var(--muted);line-height:1.7}
+.kpi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:14px}
+.kpi{text-align:center;background:rgba(255,255,255,.05);border:1px solid rgba(245,200,66,.14);border-radius:14px;padding:14px 12px}
+.kpi .num{font-size:22px;font-weight:800;color:var(--gold);margin-bottom:4px}
+.kpi .lbl{font-size:11px;color:var(--muted2)}
+.section-title{display:flex;align-items:center;gap:8px;margin:18px 0 12px;font-size:12px;color:var(--gold);text-transform:uppercase;letter-spacing:.10em}
+.section-title:after{content:'';flex:1;height:1px;background:rgba(245,200,66,.18)}
+.product-card{background:linear-gradient(135deg, rgba(255,255,255,.05), rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.09);border-radius:18px;padding:16px}
+.product-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px}
+.pill{font-size:11px;padding:5px 10px;border-radius:999px;background:rgba(245,200,66,.12);border:1px solid rgba(245,200,66,.22);color:var(--gold)}
+.placeholder{height:96px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-weight:700;letter-spacing:.05em;margin:10px 0 12px}
+.gold{background:linear-gradient(135deg,#F7D86A,#E2A321);color:#10203F}
+.green{background:linear-gradient(135deg,#75C857,#2E7D32)}
+.cyan{background:linear-gradient(135deg,#49B8C8,#205F8E)}
+.purple{background:linear-gradient(135deg,#9A79D4,#5C3F8E)}
+ul.bullets{margin:0;padding-left:18px}
+ul.bullets li{margin:0 0 7px;color:var(--muted);line-height:1.65}
+.guide-item{background:var(--card2);border:1px solid var(--line);border-radius:18px;padding:16px;margin-bottom:12px}
+.guide-item h3{display:flex;justify-content:space-between;gap:12px;align-items:center;margin:0 0 10px}
+.guide-item h3 span:last-child{color:var(--gold);font-size:14px}
+.callout{margin-top:12px;border-left:3px solid var(--gold);background:rgba(245,200,66,.08);padding:14px;border-radius:0 14px 14px 0;color:var(--muted);line-height:1.7}
+.slide-nav{display:flex;gap:8px;overflow:auto hidden;scrollbar-width:none;margin-bottom:12px}
+.slide-nav::-webkit-scrollbar{display:none}
+.slide-btn{white-space:nowrap;border:none;cursor:pointer;padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.06);color:rgba(255,255,255,.72);border:1px solid var(--line)}
+.slide-btn.active{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#12213F;font-weight:700}
+.slide{display:none}
+.slide.active{display:block}
+.flow-step{display:flex;gap:12px;align-items:flex-start;background:var(--card2);border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:10px}
+.step-no{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:0 0 32px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#10203F;font-weight:800}
+.diagram{background:linear-gradient(180deg, rgba(30,64,128,.30), rgba(255,255,255,.03));border:1px solid var(--line);border-radius:18px;padding:16px;margin-top:12px}
+.center-node,.child-node{display:flex;align-items:center;justify-content:center;text-align:center;font-weight:700;border-radius:16px;border:1px solid rgba(245,200,66,.18);background:rgba(255,255,255,.06)}
+.center-node{height:72px;margin:0 auto 12px;max-width:180px}
+.child-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.child-node{height:70px}
+.child-grid.single{grid-template-columns:minmax(180px,280px);justify-content:center}
+.child-grid.single .child-node{height:86px}
+.math{background:rgba(255,255,255,.05);border:1px dashed rgba(245,200,66,.30);border-radius:14px;padding:12px;margin-top:12px;color:#fff;line-height:1.8}
+.lesson{background:var(--card2);border:1px solid var(--line);padding:14px;border-radius:16px;margin-bottom:10px}
+.lesson h4{margin:0 0 8px}
+.prompt-grid{display:grid;gap:10px}
+@media(min-width:700px){.prompt-grid{grid-template-columns:repeat(2,1fr)}}
+.prompt{border:none;cursor:pointer;text-align:left;padding:14px;border-radius:16px;background:rgba(255,255,255,.06);border:1px solid var(--line);color:#fff}
+.prompt strong{display:block;margin-bottom:6px;color:var(--gold)}
+.chat{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:18px;padding:14px}
+.chat-log{display:grid;gap:10px;margin-bottom:12px;min-height:160px}
+.msg{padding:12px 14px;border-radius:14px;line-height:1.7;font-size:14px}
+.msg.user{background:var(--blue)}
+.msg.ai{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08)}
+.chat-input{display:flex;gap:10px}
+.chat-input textarea{flex:1;min-height:56px;max-height:140px;resize:vertical;border-radius:14px;background:#0A1431;color:#fff;border:1px solid var(--line);padding:12px}
+.chat-input button,.action-btn{border:none;cursor:pointer;border-radius:14px;padding:10px 16px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#10203F;font-weight:800}
+.footer-note{margin-top:18px;font-size:12px;color:var(--muted2);text-align:center}
+.calc-row{display:grid;gap:10px}
+@media(min-width:700px){.calc-row{grid-template-columns:repeat(3,1fr)}}
+label{font-size:12px;color:var(--muted2);display:block;margin-bottom:6px}
+select,input[type='number']{width:100%;padding:11px 12px;border-radius:12px;background:#0A1431;color:#fff;border:1px solid var(--line)}
+.result-box{background:linear-gradient(135deg, rgba(245,200,66,.12), rgba(255,255,255,.04));border:1px solid rgba(245,200,66,.18);border-radius:18px;padding:16px;margin-top:14px}
+.result-box h4{margin:0 0 8px;color:var(--gold)}
+.result-line{margin:6px 0;color:var(--muted)}
+.product-head h3{margin:0;display:flex;align-items:baseline;justify-content:space-between;gap:12px;width:100%}
+.product-head h3 .meta{font-size:.72em;font-weight:400;opacity:.88;white-space:nowrap;text-align:right;margin-left:auto}
+.package-table{width:100%;border-collapse:separate;border-spacing:0;margin-top:12px;overflow:hidden;border-radius:14px;border:1px solid rgba(255,255,255,.10)}
+.package-table th,.package-table td{padding:12px 10px;text-align:left;border-bottom:1px solid rgba(255,255,255,.08);font-size:13px}
+.package-table th{background:rgba(245,200,66,.14);color:var(--gold);font-size:11px;text-transform:uppercase;letter-spacing:.08em}
+.package-table tr:last-child td{border-bottom:none}
+.package-table td{color:var(--muted)}
+.package-table td:first-child{color:#fff;font-weight:800}
+.package-table td:last-child{color:var(--gold);font-weight:800}
+
+
+/* =========================================================
+   FINAL PH FULL UPGRADE OVERRIDE
+   Standalone logo + elegant elderly-friendly UI + product cards
+   ========================================================= */
+html{ -webkit-text-size-adjust:100%; text-size-adjust:100%; scroll-behavior:smooth; }
+body{ font-size:16px; line-height:1.65; background:radial-gradient(circle at 10% 0%, rgba(245,200,66,.13), transparent 28%),radial-gradient(circle at 90% 20%, rgba(55,105,190,.22), transparent 35%),linear-gradient(180deg,#07122f 0%,#0d1b3e 48%,#08142f 100%); }
+.header{ background:rgba(8,18,44,.98); box-shadow:0 10px 26px rgba(0,0,0,.20); }
+.topbar{ max-width:1180px; margin:0 auto; display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:center; gap:18px; padding:14px 18px 12px; }
+.brand{ display:grid; grid-template-columns:auto minmax(0,1fr); align-items:center; gap:16px; min-width:0; }
+.logo{ width:132px; height:42px; margin-left:10px; overflow:hidden; }
+.logo img{ width:100%; height:100%; object-fit:contain; object-position:left center; }
+.brand h1{ margin:0; font-size:clamp(20px,2.5vw,28px); line-height:1.15; letter-spacing:-.02em; white-space:normal; }
+.brand p{ margin:4px 0 0; font-size:clamp(13px,1.55vw,17px); line-height:1.35; color:rgba(245,200,66,.92); display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+.header-right{ justify-content:flex-end; padding-left:0; }
+.country-mark{ min-width:110px; padding:8px 10px; border-radius:14px; background:rgba(255,255,255,.075); border:1px solid rgba(245,200,66,.30); box-shadow:inset 0 0 0 1px rgba(255,255,255,.03); font-size:13px; }
+.flag-philippines{ width:58px; height:24px; flex-basis:24px; }
+.flag-philippines:before{ border-top-width:12px; border-bottom-width:12px; border-left-width:27px; }
+.flag-sun{ left:8px; top:9px; }
+.flag-star.one{left:4px;top:3px}.flag-star.two{left:4px;bottom:2px}.flag-star.three{left:19px;top:10px}
+.tabs{ max-width:1180px; margin:0 auto; padding:0 12px; gap:4px; border-top:1px solid rgba(255,255,255,.06); }
+.tab{ min-width:146px; padding:15px 18px; font-size:16px; font-weight:800; border-radius:16px 16px 0 0; color:rgba(255,255,255,.76); }
+.tab.active{ color:var(--gold); border-bottom-width:4px; }
+.wrap{ max-width:1180px; padding:24px 18px 40px; }
+.hero{ position:relative; overflow:hidden; padding:30px clamp(20px,3vw,34px); border-radius:28px; background:linear-gradient(135deg, rgba(38,78,150,.76), rgba(10,23,56,.92)),radial-gradient(circle at 90% 20%, rgba(245,200,66,.14), transparent 25%); border:1px solid rgba(245,200,66,.32); box-shadow:0 22px 52px rgba(0,0,0,.22); }
+.hero:before{ content:''; position:absolute; inset:0; background:linear-gradient(110deg, rgba(255,255,255,.08), transparent 32%, rgba(245,200,66,.05)); pointer-events:none; }
+.hero > *{ position:relative; z-index:1; }
+.hero .eyebrow,.section-title{ font-size:15px; letter-spacing:.09em; color:rgba(245,200,66,.98); }
+.hero h2{ max-width:980px; font-size:clamp(28px,4.1vw,44px); line-height:1.12; margin-bottom:14px; }
+.hero p,.card p,ul.bullets li,.callout,.math,.result-line,.msg{ font-size:17px; line-height:1.75; color:rgba(255,255,255,.88); }
+.kpi-grid{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; margin-top:24px; }
+.kpi{ min-height:132px; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:20px 16px; border-radius:22px; background:linear-gradient(180deg, rgba(255,255,255,.105), rgba(255,255,255,.058)); border:1px solid rgba(245,200,66,.28); box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 10px 24px rgba(0,0,0,.12); }
+.kpi .num{ font-size:clamp(30px,4.4vw,46px); line-height:1; margin-bottom:10px; font-weight:900; text-shadow:0 2px 10px rgba(0,0,0,.24); }
+.kpi .lbl{ max-width:190px; font-size:clamp(15px,1.8vw,19px); line-height:1.34; color:rgba(255,255,255,.93); font-weight:700; }
+.grid{ gap:18px; }
+.grid.three{ grid-template-columns:repeat(3,minmax(0,1fr)); }
+.card,.product-card,.guide-item,.lesson,.chat,.result-box{ background:linear-gradient(180deg, rgba(255,255,255,.098), rgba(255,255,255,.072)); border:1px solid rgba(255,255,255,.15); box-shadow:0 12px 30px rgba(0,0,0,.12); border-radius:22px; padding:20px 18px; }
+.product-card{ position:relative; display:flex; flex-direction:column; gap:18px; min-height:100%; padding:clamp(20px,4vw,30px)!important; }
+.product-head{ width:100%; display:flex!important; justify-content:space-between!important; align-items:flex-start!important; gap:16px!important; margin-bottom:0!important; }
+.product-head h3{ margin:0!important; display:block!important; width:auto!important; font-size:clamp(32px,8vw,48px)!important; line-height:1.05!important; font-weight:900!important; letter-spacing:-.02em!important; }
+.product-head .pill{ position:absolute!important; top:18px!important; right:20px!important; margin:0!important; font-size:clamp(16px,4.2vw,22px)!important; line-height:1.15!important; padding:10px 18px!important; border-radius:999px!important; font-weight:900!important; text-align:center!important; background:rgba(245,200,66,.14); border:1px solid rgba(245,200,66,.28); color:var(--gold); }
+.placeholder{ width:100%!important; min-height:clamp(124px,25vw,180px)!important; height:auto!important; margin:10px 0 4px!important; padding:24px 18px!important; display:flex!important; flex-direction:column!important; align-items:center!important; justify-content:center!important; gap:10px!important; text-align:center!important; font-size:clamp(26px,6vw,38px)!important; line-height:1.18!important; font-weight:900!important; border-radius:22px!important; box-shadow:inset 0 1px 0 rgba(255,255,255,.18); }
+.main-title{ font-size:clamp(26px,6vw,38px); font-weight:900; line-height:1.18; }
+.price-inside{ font-size:clamp(20px,5vw,28px); font-weight:800; background:rgba(255,255,255,.15); padding:8px 16px; border-radius:999px; color:#fff; }
+ul.bullets{ padding-left:22px; }
+ul.bullets li{ margin-bottom:11px; }
+.guide-item{ margin-bottom:16px; }
+.guide-item h3{ display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:start; gap:16px; }
+.guide-item h3 span:last-child{ padding:6px 10px; border-radius:999px; background:rgba(245,200,66,.12); border:1px solid rgba(245,200,66,.20); white-space:nowrap; font-size:17px; }
+.callout{ border-left-width:4px; background:linear-gradient(90deg, rgba(245,200,66,.13), rgba(255,255,255,.055)); border-top:1px solid rgba(245,200,66,.12); border-right:1px solid rgba(245,200,66,.08); border-bottom:1px solid rgba(245,200,66,.08); }
+.slide-btn,.action-btn,.chat-input button,.prompt{ min-height:54px; font-size:17px; line-height:1.35; border-radius:16px; }
+.slide-btn{ padding:14px 18px; font-weight:800; border-radius:999px; }
+.flow-step{ padding:18px; border-radius:18px; background:linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.055)); }
+.flow-step strong{ font-size:19px; line-height:1.35; }
+.step-no{ width:40px; height:40px; flex-basis:40px; font-size:20px; }
+.prompt-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+.chat-input{ flex-direction:column; }
+.chat-input textarea,select,input[type='number']{ min-height:58px; font-size:17px; line-height:1.45; border-radius:16px; }
+label{ font-size:16px; color:rgba(255,255,255,.78); font-weight:700; }
+.package-table th,.package-table td{ font-size:15px; line-height:1.45; }
+@media(max-width:980px){ .kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr));} .grid.three{grid-template-columns:1fr;} .child-grid{grid-template-columns:repeat(2,minmax(0,1fr));} }
+@media(max-width:760px){ .topbar{grid-template-columns:minmax(0,1fr) auto; gap:10px; padding:12px 12px 10px;} .brand{gap:10px;} .logo{width:108px;height:36px;margin-left:8px;} .brand h1{font-size:clamp(17px,4.6vw,22px);} .brand p{font-size:clamp(12px,3.2vw,15px); -webkit-line-clamp:2;} .country-mark{min-width:auto;padding:6px 7px;font-size:11px;} .flag-philippines{width:44px;height:18px;flex-basis:18px;} .flag-philippines:before{border-top-width:9px;border-bottom-width:9px;border-left-width:20px;} .flag-sun{left:6px;top:6px;width:5px;height:5px;} .flag-star{font-size:5px}.flag-star.one{left:3px;top:2px}.flag-star.two{left:3px;bottom:1px}.flag-star.three{left:15px;top:7px} .tabs{padding:0 8px;} .tab{min-width:136px;padding:14px 14px;font-size:16px;} .wrap{padding:18px 12px 32px;} .hero{padding:24px 18px;border-radius:24px;} .hero h2{font-size:clamp(25px,7vw,34px);} .hero p{font-size:17px;} .kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;} .kpi{min-height:122px;padding:16px 10px;border-radius:18px;} .kpi .num{font-size:clamp(30px,8.5vw,38px);} .kpi .lbl{font-size:clamp(14px,4vw,17px);} .guide-item h3{grid-template-columns:1fr;gap:8px;} .guide-item h3 span:last-child{width:max-content;white-space:normal;} .prompt-grid,.calc-row{grid-template-columns:1fr;} }
+@media(max-width:420px){ .logo{width:100px;height:34px;margin-left:6px;} .brand{gap:8px;} .country-mark span{font-size:10px;} .tab{min-width:126px;font-size:15px;padding:13px 12px;} .hero{padding:22px 15px;} .kpi{min-height:116px;} .kpi .lbl{font-size:14px;line-height:1.32;} .product-head h3{font-size:34px!important; padding-right:115px;} .product-head .pill{top:18px!important; right:18px!important; font-size:16px!important; padding:9px 14px!important;} }
+@media print{ .header{position:static} .tab,.slide-btn,.action-btn,.chat-input{display:none!important} .panel,.slide{display:block!important} body{background:#0D1B3E;color:#fff} }
+
+
+/* === Product Price Inside Box Patch === */
+.price-inside{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  margin-top:4px;
+  padding:9px 18px;
+  border-radius:999px;
+  background:rgba(255,255,255,.18);
+  border:1px solid rgba(255,255,255,.28);
+  color:#fff;
+  font-size:clamp(20px,4.8vw,28px);
+  line-height:1.1;
+  font-weight:900;
+  letter-spacing:.02em;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.12);
+}
+.placeholder{
+  gap:10px !important;
+}
+  </style>
+  <meta content="telephone=no" name="format-detection"/>
+  <meta content="#0D1B3E" name="theme-color"/>
+  <meta content="yes" name="apple-mobile-web-app-capable"/>
+  <meta content="EnhanCel Philippines" name="apple-mobile-web-app-title"/>
+  <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+  <style id="mobile-ios-android-compatibility-patch">
+   /* iOS + Android mobile compatibility patch */
+html{
+  -webkit-text-size-adjust:100%;
+  text-size-adjust:100%;
+  scroll-behavior:smooth;
+}
+body{
+  min-height:100vh;
+  min-height:100dvh;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+button, .tab, .slide-btn, .prompt, .action-btn{
+  min-height:44px;
+  touch-action:manipulation;
+  -webkit-tap-highlight-color:rgba(245,200,66,.25);
+}
+img, svg{
+  max-width:100%;
+  height:auto;
+}
+.header{
+  padding-top:env(safe-area-inset-top);
+}
+.wrap{
+  padding-left:max(12px, env(safe-area-inset-left));
+  padding-right:max(12px, env(safe-area-inset-right));
+  padding-bottom:max(28px, env(safe-area-inset-bottom));
+}
+.tabs, .slide-nav{
+  -webkit-overflow-scrolling:touch;
+}
+input, select, textarea, button{
+  font-size:16px; /* prevents iPhone auto-zoom on focus */
+}
+@supports (-webkit-touch-callout:none){
+  .header{
+    backdrop-filter:none;
+    -webkit-backdrop-filter:none;
+    background:rgba(10,20,49,.98);
+  }
+}
+@media(max-width:820px){
+  .grid.three, .grid.two{
+    grid-template-columns:1fr !important;
+  }
+  .topbar{
+    grid-template-columns:minmax(0,1fr) auto !important;
+    display:grid !important;
+  }
+}
+@media(max-width:520px){
+  .brand h1{
+    white-space:normal !important;
+    overflow:visible !important;
+    text-overflow:clip !important;
+  }
+  .product-card, .card, .guide-item, .hero{
+    overflow:hidden;
+  }
+  .placeholder{
+    word-break:normal;
+    overflow-wrap:break-word;
+  }
+}
+  </style>
+ </head>
+ <body>
+  <div class="header">
+   <div class="topbar">
+    <div class="brand">
+     <div class="logo">
+      <img alt="EnhanCel logo" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20270%2080%22%20role%3D%22img%22%20aria-label%3D%22EnhanCel%20logo%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22lg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23ffffff%22%2F%3E%3Cstop%20offset%3D%220.78%22%20stop-color%3D%22%23ffffff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23F5C842%22%2F%3E%3C%2FlinearGradient%3E%3Cfilter%20id%3D%22ds%22%20x%3D%22-10%25%22%20y%3D%22-20%25%22%20width%3D%22120%25%22%20height%3D%22140%25%22%3E%3CfeDropShadow%20dx%3D%220%22%20dy%3D%222%22%20stdDeviation%3D%222%22%20flood-color%3D%22%23000000%22%20flood-opacity%3D%220.24%22%2F%3E%3C%2Ffilter%3E%3C%2Fdefs%3E%3Crect%20width%3D%22270%22%20height%3D%2280%22%20fill%3D%22none%22%2F%3E%3Ctext%20x%3D%220%22%20y%3D%2253%22%20font-family%3D%22Arial%2C%20Helvetica%2C%20sans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22800%22%20fill%3D%22url%28%23lg%29%22%20letter-spacing%3D%22-1.8%22%20filter%3D%22url%28%23ds%29%22%3EEnhanCel%3C%2Ftext%3E%3C%2Fsvg%3E"/>
+     </div>
+     <div>
+      <h1 id="brandTitle">
+       EnhanCel Business Plan
+      </h1>
+      <p id="brandSub">
+       Offline Corporate System · Income · Closing · Academy · Coach
+      </p>
+     </div>
+    </div>
+    <div class="header-right">
+     <div class="country-mark">
+      <div aria-label="Philippines flag" class="flag-philippines" role="img">
+       <span class="flag-sun">
+       </span>
+       <span class="flag-star one">
+        ✦
+       </span>
+       <span class="flag-star two">
+        ✦
+       </span>
+       <span class="flag-star three">
+        ✦
+       </span>
+      </div>
+      <span>
+       Philippines
+      </span>
+     </div>
+    </div>
+   </div>
+   <div class="tabs">
+    <button class="tab active" data-tab="about" id="tab-about">
+     About
+    </button>
+    <button class="tab" data-tab="income" id="tab-income">
+     Income Guide
+    </button>
+    <button class="tab" data-tab="closing" id="tab-closing">
+     Closing Engine
+    </button>
+    <button class="tab" data-tab="academy" id="tab-academy">
+     Academy
+    </button>
+    <button class="tab" data-tab="coach" id="tab-coach">
+     AI Coach
+    </button>
+    <button class="tab" data-tab="calculator" id="tab-calculator">
+     Calculator
+    </button>
+   </div>
+  </div>
+  <div class="wrap">
+   <section class="panel active" id="panel-about">
+    <div class="hero">
+     <div class="eyebrow" id="about-eyebrow">
+      EnhanCel Corporate Positioning
+     </div>
+     <h2 id="about-h2">
+      Bring branding, products, and business opportunity into one corporate interface
+     </h2>
+     <p id="about-p">
+      This version is built on a stable offline base and upgraded into a fuller corporate-style interface. It can be used to explain the brand, the income model, and the closing flow, while also serving as a team training tool.
+     </p>
+     <div class="kpi-grid">
+      <div class="kpi">
+       <div class="num">
+        6
+       </div>
+       <div class="lbl" id="kpi1">
+        Business Income Streams
+       </div>
+      </div>
+      <div class="kpi">
+       <div class="num">
+        50%
+       </div>
+       <div class="lbl" id="kpi2">
+        Max Retail Income
+       </div>
+      </div>
+      <div class="kpi">
+       <div class="num">
+        12%
+       </div>
+       <div class="lbl" id="kpi3">
+        Max Pairing Income
+       </div>
+      </div>
+      <div class="kpi">
+       <div class="num">
+        10%
+       </div>
+       <div class="lbl" id="kpi4">
+        Leadership Reward Pool
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="section-title" id="about-sec1">
+     Product Matrix
+    </div>
+    <div class="grid three">
+     <div class="product-card">
+      <div class="product-head">
+       <h3>
+        EnhanCel53
+       </h3>
+       <span class="pill gold" id="pill-53">
+        Replenish
+       </span>
+      </div>
+      <div class="placeholder gold">
+       <div class="main-title">
+        EnhanCel53
+       </div>
+       <div class="price-inside">
+        PHP4200
+       </div>
+      </div>
+      <ul class="bullets">
+       <li id="p53-1">
+        A high-value product positioned around cellular nutrition support.
+       </li>
+       <li id="p53-2">
+        Best used to explain the final “replenish” value in the trilogy.
+       </li>
+       <li id="p53-3">
+        Can be positioned around complete nutrition, daily support, and long-term care.
+       </li>
+      </ul>
+     </div>
+     <div class="product-card">
+      <div class="product-head">
+       <h3>
+        FVF
+       </h3>
+       <span class="pill" id="pill-fvf">
+        Remove
+       </span>
+      </div>
+      <div class="placeholder green">
+       <div class="main-title">
+        Fruit &amp; Vegetable Fibre
+       </div>
+       <div class="price-inside">
+        PHP3000
+       </div>
+      </div>
+      <ul class="bullets">
+       <li id="fvf-1">
+        A fruit and vegetable fibre direction that fits the “remove” step first.
+       </li>
+       <li id="fvf-2">
+        Useful when explaining environment, metabolism, and absorption readiness.
+       </li>
+       <li id="fvf-3">
+        Helps build the logic of clearing first before replenishing.
+       </li>
+      </ul>
+     </div>
+     <div class="product-card">
+      <div class="product-head">
+       <h3>
+        Postbiotic
+       </h3>
+       <span class="pill" id="pill-pb">
+        Realign
+       </span>
+      </div>
+      <div class="placeholder cyan">
+       <div class="main-title">
+        Postbiotic
+       </div>
+       <div class="price-inside">
+        PHP3000
+       </div>
+      </div>
+      <ul class="bullets">
+       <li id="pb-1">
+        Acts as the bridge between remove and replenish.
+       </li>
+       <li id="pb-2">
+        Useful for explaining gut balance, realignment, and a long-term foundation.
+       </li>
+       <li id="pb-3">
+        Helps prospects understand a system approach rather than a single-product pitch.
+       </li>
+      </ul>
+     </div>
+    </div>
+    <div class="section-title" id="about-sec2">
+     Brand Script
+    </div>
+    <div class="card">
+     <h3 id="brand-script-h">
+      Simple Corporate Introduction
+     </h3>
+     <p id="brand-script-p">
+      EnhanCel is not just about selling a single product. It uses the “Remove, Realign, Replenish” structure to combine product value, user repurchase, and business opportunity into a sustainable system. Members can start from using and retailing the products, then gradually move into referral, team, and leadership income.
+     </p>
+    </div>
+   </section>
+   <section class="panel" id="panel-income">
+    <div class="hero">
+     <div class="eyebrow" id="income-eyebrow">
+      Income Guide
+     </div>
+     <h2 id="income-h2">
+      Understand the 6 business incomes clearly
+     </h2>
+     <p id="income-p">
+      Adapted from the PH Plan: start with retail and referral, then explain pairing, matching, overriding, and the annual leadership reward in a simple sequence.
+     </p>
+    </div>
+    <div class="guide-item">
+     <h3>
+      <span id="income1-title">
+       1. Retail Profit
+      </span>
+      <span id="income1-rate">
+       Up to 50%
+      </span>
+     </h3>
+     <ul class="bullets">
+      <li id="income1-1">
+       Earn from the margin between package cost and retail selling price.
+      </li>
+      <li id="income1-2">
+       PH Plan examples show stronger profit as package size increases across EnhanCel53, FVF, and combo sets.
+      </li>
+      <li id="income1-3">
+       This is the fastest income to understand because it starts from direct product sales.
+      </li>
+     </ul>
+    </div>
+    <div class="guide-item">
+     <h3>
+      <span id="income2-title">
+       2. Referral Income
+      </span>
+      <span id="income2-rate">
+       Up to 15% from EV
+      </span>
+     </h3>
+     <ul class="bullets">
+      <li id="income2-1">
+       Earn when you personally introduce a new agent package.
+      </li>
+      <li id="income2-2">
+       Use this to show how personal sharing creates the first business structure.
+      </li>
+     </ul>
+     <table aria-label="Referral income rates" class="package-table">
+      <thead>
+       <tr>
+        <th>
+         Package
+        </th>
+        <th>
+         Referral Rate
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td>
+         Bronze
+        </td>
+        <td>
+         11%
+        </td>
+       </tr>
+       <tr>
+        <td>
+         Silver
+        </td>
+        <td>
+         13%
+        </td>
+       </tr>
+       <tr>
+        <td>
+         Gold
+        </td>
+        <td>
+         15%
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+    <div class="guide-item">
+     <h3>
+      <span id="income3-title">
+       3. Pairing Income
+      </span>
+      <span id="income3-rate">
+       Up to 12% from EV
+      </span>
+     </h3>
+     <ul class="bullets">
+      <li id="income3-1">
+       Pairing is calculated from the weaker leg EV after left and right team volume is compared.
+      </li>
+     </ul>
+     <table aria-label="Pairing income rates and caps" class="package-table">
+      <thead>
+       <tr>
+        <th>
+         Package
+        </th>
+        <th>
+         Pairing Rate
+        </th>
+        <th>
+         Daily Max Cap
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td>
+         Bronze
+        </td>
+        <td>
+         8%
+        </td>
+        <td>
+         P13,000
+        </td>
+       </tr>
+       <tr>
+        <td>
+         Silver
+        </td>
+        <td>
+         10%
+        </td>
+        <td>
+         P32,500
+        </td>
+       </tr>
+       <tr>
+        <td>
+         Gold
+        </td>
+        <td>
+         12%
+        </td>
+        <td>
+         P78,000
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+    <div class="guide-item">
+     <h3>
+      <span id="income4-title">
+       4. Matching Income
+      </span>
+      <span id="income4-rate">
+       5% from upline daily income
+      </span>
+     </h3>
+     <ul class="bullets">
+      <li id="income4-1">
+       Enjoy 5% of the immediate upline daily income from referral plus pairing bonus.
+      </li>
+      <li id="income4-2">
+       The immediate upline is determined after placement is completed.
+      </li>
+     </ul>
+     <table aria-label="Matching income example" class="package-table">
+      <thead>
+       <tr>
+        <th>
+         Example Item
+        </th>
+        <th>
+         Calculation
+        </th>
+        <th>
+         Result
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td>
+         Upline daily income
+        </td>
+        <td>
+         P100,000
+        </td>
+        <td>
+         -
+        </td>
+       </tr>
+       <tr>
+        <td>
+         Matching rate
+        </td>
+        <td>
+         P100,000 x 5%
+        </td>
+        <td>
+         P5,000
+        </td>
+       </tr>
+       <tr>
+        <td>
+         Accumulative cap
+        </td>
+        <td>
+         Up to 300% of package amount
+        </td>
+        <td>
+         Package-based cap
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+    <div class="guide-item">
+     <h3>
+      <span id="income5-title">
+       5. Overriding Income
+      </span>
+      <span id="income5-rate">
+       Up to 10% from group EV
+      </span>
+     </h3>
+     <ul class="bullets">
+      <li id="income5-1">
+       Qualified leaders override downline monthly group EV based on rank entitlement.
+      </li>
+      <li id="income5-2">
+       State Agent and National Agent lines can earn 1% when immediate downlines promote to the same rank.
+      </li>
+     </ul>
+     <table aria-label="Overriding income rates" class="package-table">
+      <thead>
+       <tr>
+        <th>
+         Rank / Type
+        </th>
+        <th>
+         Overriding Rate
+        </th>
+        <th>
+         Remarks
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td>
+         Area Agent
+        </td>
+        <td>
+         2%
+        </td>
+        <td>
+         Monthly group EV
+        </td>
+       </tr>
+       <tr>
+        <td>
+         District Agent
+        </td>
+        <td>
+         4%
+        </td>
+        <td>
+         Monthly group EV
+        </td>
+       </tr>
+       <tr>
+        <td>
+         State Agent
+        </td>
+        <td>
+         6%
+        </td>
+        <td>
+         Monthly group EV
+        </td>
+       </tr>
+       <tr>
+        <td>
+         National Agent
+        </td>
+        <td>
+         8%
+        </td>
+        <td>
+         Monthly group EV
+        </td>
+       </tr>
+       <tr>
+        <td>
+         Breakaway Overriding
+        </td>
+        <td>
+         1%
+        </td>
+        <td>
+         Same-rank immediate downline
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+    <div class="guide-item">
+     <h3>
+      <span id="income6-title">
+       6. Annual Leadership Bonus
+      </span>
+      <span id="income6-rate">
+       Up to 10% from EV
+      </span>
+     </h3>
+     <ul class="bullets">
+      <li id="income6-1">
+       The company allocates 10% of generated EV into an annual reward pool for outstanding leaders.
+      </li>
+      <li id="income6-2">
+       Qualification starts from District Agent and uses monthly income points.
+      </li>
+      <li id="income6-3">
+       Every P20,000 monthly income earns 1 point, and each additional P20,000 earns another point.
+      </li>
+     </ul>
+    </div>
+    <div class="callout" id="income-callout">
+     <strong>
+      Simple explanation:
+     </strong>
+     Retail creates the first cash flow, referral rewards personal introduction, pairing rewards balanced team volume, matching rewards placement linkage, overriding rewards rank-based group leadership, and the annual leadership bonus rewards outstanding yearly performance.
+    </div>
+   </section>
+   <section class="panel" id="panel-closing">
+    <div class="hero">
+     <div class="eyebrow" id="closing-eyebrow">
+      Closing Tactics
+     </div>
+     <h2 id="closing-h2">
+      Prepare your answer before the prospect asks tricky questions
+     </h2>
+     <p id="closing-p">
+      Use this section to train confidence, handle objections calmly, and guide the prospect from doubt into a clear next step.
+     </p>
+    </div>
+    <div class="slide-nav">
+     <button class="slide-btn active" data-slide="s1" id="slidebtn1">
+      Mindset
+     </button>
+     <button class="slide-btn" data-slide="s2" id="slidebtn2">
+      MLM Question
+     </button>
+     <button class="slide-btn" data-slide="s3" id="slidebtn3">
+      Money Question
+     </button>
+     <button class="slide-btn" data-slide="s4" id="slidebtn4">
+      No Time
+     </button>
+     <button class="slide-btn" data-slide="s5" id="slidebtn5">
+      Need Think
+     </button>
+     <button class="slide-btn" data-slide="s6" id="slidebtn6">
+      Price Concern
+     </button>
+     <button class="slide-btn" data-slide="s7" id="slidebtn7">
+      Trust Check
+     </button>
+     <button class="slide-btn" data-slide="s8" id="slidebtn8">
+      Close
+     </button>
+    </div>
+    <div class="slide active" id="slide-s1">
+     <div class="flow-step">
+      <div class="step-no">
+       1
+      </div>
+      <div>
+       <strong id="c1-1">
+        Do not defend too early.
+       </strong>
+       <div id="c1-2" style="color:var(--muted2);margin-top:4px">
+        When a prospect asks a tough question, first acknowledge it, then clarify what they are really worried about.
+       </div>
+      </div>
+     </div>
+     <div class="flow-step">
+      <div class="step-no">
+       2
+      </div>
+      <div>
+       <strong id="c1-3">
+        Answer with product, system, and proof.
+       </strong>
+       <div id="c1-4" style="color:var(--muted2);margin-top:4px">
+        Use product value, PH package logic, and simple income examples before asking them to decide.
+       </div>
+      </div>
+     </div>
+     <div class="callout" id="c1-callout">
+      <strong>
+       Control line:
+      </strong>
+      “That is a fair question. Before I answer, let me understand: are you worried about the product, the money, or whether you can do this?”
+     </div>
+    </div>
+    <div class="slide" id="slide-s2">
+     <div class="card">
+      <h3 id="c2-h">
+       If they ask: “Is this MLM?”
+      </h3>
+      <ul class="bullets">
+       <li id="c2-1">
+        Do not argue with the label. Bring the focus back to product, legal business structure, and customer value.
+       </li>
+       <li id="c2-2">
+        Say: “The important question is whether there is a real product, real demand, clear package value, and a fair reward plan.”
+       </li>
+       <li id="c2-3">
+        Then show the PH product packages and explain retail first before team income.
+       </li>
+      </ul>
+     </div>
+    </div>
+    <div class="slide" id="slide-s3">
+     <div class="card">
+      <h3 id="c3-h">
+       If they ask: “How much can I really earn?”
+      </h3>
+      <ul class="bullets">
+       <li id="c3-1">
+        Do not promise income. Show them the calculation method and let the numbers stay realistic.
+       </li>
+       <li id="c3-2">
+        Start with referral income because it is easiest to verify.
+       </li>
+       <li id="c3-3">
+        Then explain that pairing, matching, overriding, and leadership bonus depend on activity, placement, and qualification.
+       </li>
+      </ul>
+      <div class="callout" id="c3-math">
+       <strong>
+        Answer line:
+       </strong>
+       “Let us not guess income. Let us calculate one simple example first, then you decide whether this is worth starting properly.”
+      </div>
+     </div>
+    </div>
+    <div class="slide" id="slide-s4">
+     <div class="card">
+      <h3 id="c4-h">
+       If they say: “I have no time.”
+      </h3>
+      <ul class="bullets">
+       <li id="c4-1">
+        Agree first. Most people do not have extra time, so the system must be simple enough to start part-time.
+       </li>
+       <li id="c4-2">
+        Position the first step as product sharing, not full-time selling.
+       </li>
+       <li id="c4-3">
+        Ask for a small commitment: 3 product conversations or 3 prospect lists this week.
+       </li>
+      </ul>
+     </div>
+    </div>
+    <div class="slide" id="slide-s5">
+     <div class="card">
+      <h3 id="c5-h">
+       If they say: “I need to think about it.”
+      </h3>
+      <ul class="bullets">
+       <li id="c5-1">
+        Do not pressure. Ask what part they need to think about: product, price, risk, timing, or confidence.
+       </li>
+       <li id="c5-2">
+        If they cannot name the issue, they are likely avoiding a decision.
+       </li>
+       <li id="c5-3">
+        Offer two starting paths: product-user first or business-builder package.
+       </li>
+      </ul>
+      <div class="callout" id="c5-callout">
+       <strong>
+        Response:
+       </strong>
+       “Of course. So I can help properly, which part are you unsure about: product, budget, or whether you can do it?”
+      </div>
+     </div>
+    </div>
+    <div class="slide" id="slide-s6">
+     <div class="card">
+      <h3 id="c6-h">
+       If they say: “The package is expensive.”
+      </h3>
+      <div class="flow-step">
+       <div class="step-no">
+        1
+       </div>
+       <div>
+        <strong id="c6-1">
+         Separate cost from value.
+        </strong>
+        <div id="c6-2" style="color:var(--muted2);margin-top:4px">
+         Show what products they receive and how the EV connects to referral and team income.
+        </div>
+       </div>
+      </div>
+      <div class="flow-step">
+       <div class="step-no">
+        2
+       </div>
+       <div>
+        <strong id="c6-3">
+         Give a lower-risk option.
+        </strong>
+        <div id="c6-4" style="color:var(--muted2);margin-top:4px">
+         If Gold is too heavy, compare Bronze or Silver as a practical entry point.
+        </div>
+       </div>
+      </div>
+      <div class="flow-step">
+       <div class="step-no">
+        3
+       </div>
+       <div>
+        <strong id="c6-5">
+         Close on readiness.
+        </strong>
+        <div id="c6-6" style="color:var(--muted2);margin-top:4px">
+         Ask whether the concern is budget now or belief in the business.
+        </div>
+       </div>
+      </div>
+      <div class="callout" id="c6-callout">
+       <strong>
+        Question:
+       </strong>
+       “If the budget is solved, would you prefer to start as a user first or build this as a business?”
+      </div>
+     </div>
+    </div>
+    <div class="slide" id="slide-s7">
+     <div class="card">
+      <h3 id="c7-h">
+       If they ask: “Can I trust this?”
+      </h3>
+      <ul class="bullets">
+       <li id="c7-1">
+        Use proof, not hype: company background, product story, package details, and clear compensation structure.
+       </li>
+       <li id="c7-2">
+        Invite them to verify facts instead of forcing belief.
+       </li>
+       <li id="c7-3">
+        Trust grows when the explanation is transparent and not exaggerated.
+       </li>
+      </ul>
+      <div class="callout" id="c7-callout">
+       <strong>
+        Answer line:
+       </strong>
+       “Do not believe because I say so. Check the product, the company, the package, and the plan. If those make sense, then we talk about how you start.”
+      </div>
+     </div>
+    </div>
+    <div class="slide" id="slide-s8">
+     <div class="card">
+      <h3 id="c8-h">
+       Closing: Move from doubt to next action
+      </h3>
+      <ul class="bullets">
+       <li id="c8-1">
+        Summarise their reason: health, side income, team-building, or leadership growth.
+       </li>
+       <li id="c8-2">
+        Give two clear choices instead of asking an open-ended question.
+       </li>
+       <li id="c8-3">
+        Close with a next action: choose package, book follow-up, make prospect list, or start product use.
+       </li>
+      </ul>
+      <div class="callout" id="c8-callout">
+       <strong>
+        Closing line:
+       </strong>
+       “Based on what you told me, you do not need to decide everything today. You only need to choose your starting route: user first, or business builder?”
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="panel" id="panel-academy">
+    <div class="hero">
+     <div class="eyebrow" id="academy-eyebrow">
+      Academy
+     </div>
+     <h2 id="academy-h2">
+      Offline training modules
+     </h2>
+     <p id="academy-p">
+      Use fixed content to train the team consistently, even without online AI.
+     </p>
+    </div>
+    <div class="lesson">
+     <h4 id="a1-h">
+      Module 1 · Opening Positioning
+     </h4>
+     <p id="a1-p">
+      Explain the model first, then product, then income. Do not lead with price or bonus.
+     </p>
+    </div>
+    <div class="lesson">
+     <h4 id="a2-h">
+      Module 2 · Product Logic
+     </h4>
+     <p id="a2-p">
+      Use Remove, Realign, Replenish to explain FVF, Postbiotic, and EnhanCel53 together.
+     </p>
+    </div>
+    <div class="lesson">
+     <h4 id="a3-h">
+      Module 3 · 4-Person Duplication
+     </h4>
+     <p id="a3-p">
+      Train members to explain the 4-person structure simply and naturally.
+     </p>
+    </div>
+    <div class="lesson">
+     <h4 id="a4-h">
+      Module 4 · Income Derivation
+     </h4>
+     <p id="a4-p">
+      Explain the steps before the final numbers so prospects do not feel lost.
+     </p>
+    </div>
+    <div class="lesson">
+     <h4 id="a5-h">
+      Module 5 · Closing
+     </h4>
+     <p id="a5-p">
+      Bring the conversation from understanding the plan to choosing how to start.
+     </p>
+    </div>
+   </section>
+   <section class="panel" id="panel-coach">
+    <div class="hero">
+     <div class="eyebrow" id="coach-eyebrow">
+      Offline Coach
+     </div>
+     <h2 id="coach-h2">
+      Built-in offline coaching
+     </h2>
+     <p id="coach-p">
+      This is not live AI. It is a built-in local coaching logic for opening, structure explanation, and closing practice.
+     </p>
+    </div>
+    <div class="prompt-grid">
+     <button class="prompt" onclick="askCoachPreset(promptTexts[lang].p1)">
+      <strong id="cp1-h">
+       How do I open naturally?
+      </strong>
+      <span id="cp1-p">
+       Do not talk about bonuses too early. First create willingness to listen.
+      </span>
+     </button>
+     <button class="prompt" onclick="askCoachPreset(promptTexts[lang].p2)">
+      <strong id="cp2-h">
+       What if the prospect says this is MLM?
+      </strong>
+      <span id="cp2-p">
+       Refocus the discussion on products, system, and income path.
+      </span>
+     </button>
+     <button class="prompt" onclick="askCoachPreset(promptTexts[lang].p3)">
+      <strong id="cp3-h">
+       How do I explain 4 downlines?
+      </strong>
+      <span id="cp3-p">
+       Make duplication sound simple and practical.
+      </span>
+     </button>
+     <button class="prompt" onclick="askCoachPreset(promptTexts[lang].p4)">
+      <strong id="cp4-h">
+       What if the income sounds too complex?
+      </strong>
+      <span id="cp4-p">
+       Pull it back to sequence first, not percentages.
+      </span>
+     </button>
+    </div>
+    <div class="chat" style="margin-top:14px">
+     <div class="chat-log" id="chatLog">
+      <div class="msg ai" id="coach-welcome">
+       Welcome to the offline coach. You can ask about opening, referral explanation, closing, or team-building basics.
+      </div>
+     </div>
+     <div class="chat-input">
+      <textarea id="coachInput" placeholder="Ask something, for example: The prospect says they want to think about it. How do I close?"></textarea>
+      <button id="coach-send" onclick="sendCoach()">
+       Send
+      </button>
+     </div>
+    </div>
+    <div class="footer-note" id="coach-note">
+     Offline Coach only uses local built-in logic and does not require internet.
+    </div>
+   </section>
+   <section class="panel" id="panel-calculator">
+    <div class="hero">
+     <div class="eyebrow" id="calc-eyebrow">
+      PH Bonus Calculator
+     </div>
+     <h2 id="calc-h2">
+      PH package referral calculator
+     </h2>
+     <p id="calc-p">
+      Use this teaching tool to calculate PH referral income by referral percentage using EV x referral rate x P13.
+     </p>
+    </div>
+    <div class="card">
+     <div class="calc-row">
+      <div>
+       <label id="calc-label1">
+        Referral Package
+       </label>
+       <select id="myPackage">
+        <option value="5">
+         Bronze Package (5%)
+        </option>
+        <option value="10">
+         Silver Package (10%)
+        </option>
+        <option selected="" value="15">
+         Gold Package (15%)
+        </option>
+       </select>
+      </div>
+      <div>
+       <label id="calc-label2">
+        Package EV
+       </label>
+       <input id="downlineEV" min="0" type="number" value="2000"/>
+      </div>
+      <div>
+       <label id="calc-label3">
+        Number of Packages
+       </label>
+       <input id="downlineCount" min="0" type="number" value="1"/>
+      </div>
+     </div>
+     <button class="action-btn" id="calc-btn" onclick="calculateIncome()" style="margin-top:14px">
+      Calculate
+     </button>
+     <div class="result-box" id="calcResult">
+      <h4 id="calc-result-h">
+       Result
+      </h4>
+      <div class="result-line" id="calc-result-p">
+       Choose the values above, then press calculate.
+      </div>
+     </div>
+    </div>
+   </section>
+  </div>
+  <script>
+   const tabs = document.querySelectorAll('.tab');
+const panels = document.querySelectorAll('.panel');
+tabs.forEach(btn=>{btn.addEventListener('click',()=>{tabs.forEach(t=>t.classList.remove('active'));panels.forEach(p=>p.classList.remove('active'));btn.classList.add('active');const panel=document.getElementById('panel-'+btn.dataset.tab);if(panel) panel.classList.add('active');window.scrollTo({top:0,behavior:'smooth'});});});
+const slideBtns = document.querySelectorAll('.slide-btn');
+const slides = document.querySelectorAll('.slide');
+slideBtns.forEach(btn=>{btn.addEventListener('click',()=>{slideBtns.forEach(b=>b.classList.remove('active'));slides.forEach(s=>s.classList.remove('active'));btn.classList.add('active');const slide=document.getElementById('slide-'+btn.dataset.slide);if(slide) slide.classList.add('active');});});
+let lang='en';
+const promptTexts={en:{p1:'How do I open naturally?',p2:'What if the prospect says this is MLM?',p3:'How do I explain 4 downlines?',p4:'What if the income sounds too complex?'},zh:{p1:'怎样开场比较自然？',p2:'客户说这是 MLM，怎么回答？',p3:'如何解释 4 个 downline？',p4:'对方觉得收入太复杂怎么办？'}};
+const T = JSON.parse(`{"en":{"brandTitle":"EnhanCel Business Plan","brandSub":"Offline Corporate System · Income · Closing · Academy · Coach","offlineBadge":"Offline Ready","tabs":["About","Income Guide","Closing Engine","Academy","AI Coach","Calculator"],"aboutEyebrow":"EnhanCel Corporate Positioning","aboutH2":"Bring branding, products, and business opportunity into one corporate interface","aboutP":"This version is built on a stable offline base and upgraded into a fuller corporate-style interface. It can be used to explain the brand, the income model, and the closing flow, while also serving as a team training tool.","kpi":["Core Income Streams","Max Retail Profit","Max Group Bonus","Global Pool"],"aboutSec1":"Product Matrix","pill53":"Replenish","pillFvf":"Remove","pillPb":"Realign","p53":["A high-value product positioned around cellular nutrition support.","Best used to explain the final “replenish” value in the trilogy.","Can be positioned around complete nutrition, daily support, and long-term care."],"fvf":["A fruit and vegetable fibre direction that fits the “remove” step first.","Useful when explaining environment, metabolism, and absorption readiness.","Helps build the logic of clearing first before replenishing."],"pb":["Acts as the bridge between remove and replenish.","Useful for explaining gut balance, realignment, and a long-term foundation.","Helps prospects understand a system approach rather than a single-product pitch."],"aboutSec2":"Brand Script","brandScriptH":"Simple Corporate Introduction","brandScriptP":"EnhanCel is not just about selling a single product. It uses the “Remove, Realign, Replenish” structure to combine product value, user repurchase, and business opportunity into a sustainable system. Members can start from using and retailing the products, then gradually move into referral, team, and leadership income.","incomeEyebrow":"Income Guide","incomeH2":"Understand the 5 income streams clearly","incomeP":"Explain the sequence before the percentages. Let new people understand where income starts, then show how it grows from personal income into team and leadership income.","incomeTitles":["1. Retail Profit","2. Referral Bonus","3. Leadership Bonus","4. Group Sales Bonus","5. Global Pool Bonus"],"incomeRates":["Up to 100%","Up to 20% (Daily)","Up to 10% (Daily)","Up to 25% (Monthly)","10% (Bi-yearly)"],"incomeBullets":[["Earn income through direct product sales.","Your entry package determines your retail profit percentage.","Suitable for people who want immediate cash flow."],["Earn bonus when you personally refer a new member.","Higher package levels unlock higher referral percentages.","Turns your introducing ability into the start of a long-term structure."],["Comes from the ongoing production of your team structure.","Once your team duplicates, income no longer depends only on your own selling.","This is the key move from personal effort to organisational leverage."],["Different bonus tiers are based on total team sales volume.","The more stable and active the team, the stronger the bonus potential.","This rewards organisational strength, not just referrals."],["Qualified higher ranks share the company’s global reward pool.","This helps prospects see the bigger long-term leadership upside."]],"incomeCallout":"<strong>Simple explanation:</strong> Start with retail profit, then referral bonus, then leadership income through duplication, then group sales bonus through organisational growth, and eventually global pool participation at leadership level.","closingEyebrow":"Closing Funnel","closingH2":"Explain step by step so people do not feel confused","closingP":"Do not lead with numbers. Let prospects first understand why this is a path that can expand gradually from product value to long-term structured income.","slideBtns":["Opening","Retail","Referral","Leadership","Group Bonus","Structure","Closing"],"cTexts":{"c1-1":"Explain the model first, not the money first.","c1-2":"Let the prospect see that EnhanCel is product + system + income path, not just product selling.","c1-3":"Show the five income streams early.","c1-4":"This helps people understand there is progression from retail to leadership.","c1-callout":"<strong>Opening line:</strong> “I’m not rushing to talk about bonuses first. I want you to see why EnhanCel is not just about selling products, but a system that can be built for the long term.”","c2-h":"Retail Profit: Build the first confidence quickly","c2-1":"This is the easiest part for new people to understand.","c2-2":"Even without a team, product sharing can already create the first income.","c2-3":"It helps prospects feel the model is practical and not too far away.","c3-h":"Referral Bonus: Turn network into business structure","c3-1":"A referred member is not just one sale, but a node that may continue consuming and duplicating.","c3-2":"Higher package means higher referral percentage.","c3-3":"Use a 4-person structure to make this easy to understand.","diagram-center":"You / Sponsor","diagram-1":"Downline 1","diagram-2":"Downline 2","diagram-3":"Downline 3","diagram-4":"Downline 4","c3-math":"<strong>How to explain it:</strong> “If you build 4 direct downlines first, they are not only your referral bonus source, but the starting points for leadership and group income later.”","c4-h":"Leadership Bonus: Move from personal effort to team leverage","c4-1":"When the 4 direct downlines begin duplicating, the structure starts opening up.","c4-2":"The point is not just the percentage, but the duplication power.","c4-3":"This is the key difference between side selling and building a business.","c5-h":"Group Sales Bonus: The result of organisational strength","c5-1":"As group volume grows, higher bonus tiers become relevant.","c5-2":"This rewards leaders who can create active and productive teams.","c5-3":"Do not only talk about percentages. Emphasise leadership value.","c6-h":"Structure Logic: Explain steps before income potential","c6-1":"Start with 4 direct referrals.","c6-2":"They create referral bonus and become the base for leadership levels.","c6-3":"Those 4 begin duplicating.","c6-4":"The team expands from 4 to 16 to 64, and structural income starts becoming meaningful.","c6-5":"Team sales volume grows.","c6-6":"That is when group sales bonus starts becoming part of the conversation.","c6-callout":"<strong>Key reminder:</strong> Do not start with “how much per month.” Let people first understand how the structure produces the income. That prevents confusion.","c7-h":"Closing: Bring it back to how they should start","c7-1":"If they want to test the waters, start from product and retail.","c7-2":"If they already have network access, move more actively into referral.","c7-3":"If they want a long-term business, guide them to think about duplication from day one.","c7-callout":"<strong>Closing line:</strong> “The real question is not how much you make in one go, but whether you want to stay at the level of selling by yourself, or begin building a structure that can continue producing income over time.”"}},"academyEyebrow":"Academy","academyH2":"Offline training modules","academyP":"Use fixed content to train the team consistently, even without online AI.","academy":[["Module 1 · Opening Positioning","Explain the model first, then product, then income. Do not lead with price or bonus."],["Module 2 · Product Logic","Use Remove, Realign, Replenish to explain FVF, Postbiotic, and EnhanCel53 together."],["Module 3 · 4-Person Duplication","Train members to explain the 4-person structure simply and naturally."],["Module 4 · Income Derivation","Explain the steps before the final numbers so prospects do not feel lost."],["Module 5 · Closing","Bring the conversation from understanding the plan to choosing how to start."]],"coachEyebrow":"Offline Coach","coachH2":"Built-in offline coaching","coachP":"This is not live AI. It is a built-in local coaching logic for opening, structure explanation, and closing practice.","coachPrompts":[["How do I open naturally?","Do not talk about bonuses too early. First create willingness to listen."],["What if the prospect says this is MLM?","Refocus the discussion on products, system, and income path."],["How do I explain 4 downlines?","Make duplication sound simple and practical."],["What if the income sounds too complex?","Pull it back to sequence first, not percentages."]],"coachWelcome":"Welcome to the offline coach. You can ask about opening, referral explanation, closing, or team-building basics.","coachPlaceholder":"Ask something, for example: The prospect says they want to think about it. How do I close?","coachSend":"Send","coachNote":"Offline Coach only uses local built-in logic and does not require internet.","calcEyebrow":"Income Calculator","calcH2":"Simple package and referral calculator","calcP":"This is not the full compensation engine. It is a teaching tool to help people understand how package level affects referral percentage, and how 4 direct downlines form the first structural layer.","calcLabels":["Your Package","Direct Downline EV","Number of Direct Downlines"],"calcBtn":"Calculate","calcResultH":"Result","calcResultP":"Choose the values above, then press calculate."},"zh":{"brandTitle":"EnhanCel 市场制度","brandSub":"离线企业系统 · 收入 · 成交 · 培训 · 教练","offlineBadge":"可离线使用","tabs":["品牌总览","收入指南","成交引擎","Academy","AI Coach","计算器"],"aboutEyebrow":"EnhanCel 企业定位","aboutH2":"把品牌、产品与事业机会放进同一个企业化界面","aboutP":"这版建立在稳定离线基础上，并升级成更完整的企业风格界面。它可以用来讲品牌、讲收入、讲成交，也能作为团队训练工具。","kpi":["核心收入来源","零售收益上限","团队分红上限","全球分红池"],"aboutSec1":"产品矩阵","pill53":"补 · Replenish","pillFvf":"清 · Remove","pillPb":"调 · Realign","p53":["细胞营养补充的核心高价值产品。","适合用来讲三部曲中“补”的最终价值。","可切入完整营养、日常保养与长期支持。"],"fvf":["果蔬纤维方向，适合作为“清”的第一步。","讲解时可强调环境、代谢与吸收前提。","帮助建立先清后补的逻辑顺序。"],"pb":["连接清与补的中间桥梁。","适合讲肠道平衡、调理与长期基础。","帮助对方理解系统性，而非单点产品。"],"aboutSec2":"品牌话术","brandScriptH":"简化企业介绍","brandScriptP":"EnhanCel 不是只卖单一产品，而是以“清、调、补”的思路，结合产品价值、用户回购与事业模式，建立一套可持续发展的系统。会员可以先从产品使用与零售开始，再逐步进入推荐、团队和领导收入。","incomeEyebrow":"收入指南","incomeH2":"5大收入来源，一页看懂","incomeP":"先讲顺序，再讲比例。先让新人知道从哪里开始赚钱，再说明怎么从个人收入逐步放大到团队与领导收入。","incomeTitles":["1️⃣ 零售收益","2️⃣ 推荐奖金","3️⃣ 领导奖金","4️⃣ 团队业绩分红","5️⃣ 全球分红"],"incomeRates":["高达 100%","高达 20%（日结）","高达 10%（日结）","高达 25%（月结）","10%（半年结）"],"incomeBullets":[["通过直接销售产品获得收入。","入门配套决定零售利润比例。","适合想要快速建立现金流的人。"],["亲自推荐新会员加入即可获得奖金。","配套越高，可享推荐比例越高。","把“介绍能力”转成长期结构的起点。"],["来自团队结构持续产生的收入。","团队开始复制后，收入不再只靠自己销售。","这是从个人努力走向组织杠杆的关键。"],["根据团队总业绩进入不同分红层级。","团队越稳定、越活跃，分红潜力越强。","奖励的是组织能力，而不只是推荐数量。"],["符合资格的高阶领导共享公司的全球奖励池。","帮助对方看到更高层级的长期发展空间。"]],"incomeCallout":"<strong>简单讲法：</strong>先卖产品赚零售，再推荐人赚奖金，接着通过复制赚领导收益，再透过组织成长进入团队分红，最后在领导层共享全球分红。","closingEyebrow":"成交漏斗","closingH2":"按步骤讲清楚，不让对方觉得混乱","closingP":"不要一开始就丢数字。先让对方理解：为什么这是一条能从产品价值逐步放大成长期结构收入的路径。","slideBtns":["开场认知","零售收益","推荐奖金","领导奖金","团队分红","结构推导","最后收口"],"cTexts":{"c1-1":"先讲模式，不先讲奖金。","c1-2":"先让对方看到：EnhanCel 是产品 + 系统 + 收入路径，不只是卖货。","c1-3":"尽早展示五种收入。","c1-4":"这样对方会明白，这是从零售逐步走向领导层的过程。","c1-callout":"<strong>开场话术：</strong>“我先不急着讲奖金，我先让你看懂，为什么 EnhanCel 不只是卖产品，而是一套可长期经营的系统。”","c2-h":"零售收益：先建立第一笔信心","c2-1":"这是最容易让新人理解的一部分。","c2-2":"即使还没有团队，也能先靠分享产品建立第一笔收入。","c2-3":"让对方感觉这不是遥不可及，而是可以马上开始的。","c3-h":"推荐奖金：把人脉转成事业结构","c3-1":"推荐进来的会员，不只是一次成交，而是可能持续消费、持续复制的节点。","c3-2":"配套越高，推荐比例越高。","c3-3":"建议用 4 人结构来讲，会更直观。","diagram-center":"你 / Sponsor","diagram-1":"Downline 1","diagram-2":"Downline 2","diagram-3":"Downline 3","diagram-4":"Downline 4","c3-math":"<strong>讲法：</strong>“假设你先建立 4 位直推，这 4 位不只是带来推荐奖金，也是后面领导奖金和团队分红的基础。”","c4-h":"领导奖金：从自己做，变成团队做","c4-1":"当 4 位直推开始复制，结构就会逐步展开。","c4-2":"重点不只是比例，而是复制能力。","c4-3":"这是兼职卖货和经营事业之间的关键差别。","c5-h":"团队业绩分红：组织能力被放大后的成果","c5-1":"团队总业绩提升后，更高分红层级才会进入视野。","c5-2":"奖励的是你能否带出活跃且有生产力的团队。","c5-3":"不要只讲百分比，要强调领导价值。","c6-h":"结构逻辑：先讲步骤，再讲收入潜力","c6-1":"先有 4 位直推。","c6-2":"这 4 位既带来推荐奖金，也是领导层级的基础。","c6-3":"这 4 位开始复制。","c6-4":"团队会从 4 放大到 16、64，结构收入才会越来越明显。","c6-5":"团队总业绩成长。","c6-6":"这时团队业绩分红才开始变得有感觉。","c6-callout":"<strong>重点提醒：</strong>不要先讲“一个月赚多少”。先让对方明白结构是怎样产生收入的，才不会觉得混乱。","c7-h":"最后收口：回到“适合怎样开始”","c7-1":"如果想先试水，可以从产品与零售开始。","c7-2":"如果本身有人脉资源，可以更积极从推荐切入。","c7-3":"如果想做长期事业，就要从第一天开始思考复制。","c7-callout":"<strong>成交话术：</strong>“真正的问题，不是你一次能赚多少，而是你是要停留在单靠自己卖，还是开始建立一个会持续产生收入的结构。”"}},"academyEyebrow":"培训学院","academyH2":"离线培训模块","academyP":"即使没有在线 AI，也可以用固定内容来持续统一团队表达方式。","academy":[["Module 1 · 开场定位","先讲模式、再讲产品、最后讲收入，不要一开始就丢价格或奖金。"],["Module 2 · 产品逻辑","用清、调、补讲解 FVF、Postbiotic 和 EnhanCel53 的组合价值。"],["Module 3 · 4人复制结构","训练成员如何把 4 人结构讲得简单、自然、可复制。"],["Module 4 · 收入推导","先讲步骤，再讲最终数字，避免对方听不懂逻辑。"],["Module 5 · 成交收口","把谈话从“听懂计划”推进到“选择适合的开始方式”。"]],"coachEyebrow":"离线教练","coachH2":"内置离线教练","coachP":"这不是在线 AI，而是内置的本地教练逻辑，用于训练开场、结构说明与收口。","coachPrompts":[["怎样开场比较自然？","不要太早谈奖金，先让对方愿意听。"],["客户说这是 MLM，怎么回答？","把焦点拉回产品、系统与收入路径。"],["如何解释 4 个 downline？","把复制结构讲得简单又实用。"],["对方觉得收入太复杂怎么办？","先讲顺序，不先讲百分比。"]],"coachWelcome":"欢迎使用离线教练。你可以问开场、推荐奖金解释、closing，或团队建立基础。","coachPlaceholder":"输入问题，例如：客户说再考虑，我该怎么收口？","coachSend":"发送","coachNote":"Offline Coach 只使用本地内置逻辑，不需要网络。","calcEyebrow":"收入计算器","calcH2":"简易配套与推荐计算器","calcP":"这不是完整奖金系统，而是教学工具，用来帮助理解：配套高低如何影响推荐比例，以及 4 位直推怎样形成第一层结构。","calcLabels":["你的配套","每位直推 EV","直推人数"],"calcBtn":"开始计算","calcResultH":"结果说明","calcResultP":"请先选择上方数值，再点击开始计算。"}}`);
+Object.assign(T.en,{
+  kpi:["Business Income Streams","Max Retail Income","Max Pairing Income","Leadership Reward Pool"],
+  aboutSec1:"Product Matrix",
+  p53:["A high-value product positioned around cellular nutrition support.","Best used to explain the final replenish value in the trilogy.","Can be positioned around complete nutrition, daily support, and long-term care."],
+  fvf:["A fruit and vegetable fibre direction that fits the remove step first.","Useful when explaining environment, metabolism, and absorption readiness.","Helps build the logic of clearing first before replenishing."],
+  pb:["Acts as the bridge between remove and replenish.","Useful for explaining gut balance, realignment, and a long-term foundation.","Helps prospects understand a system approach rather than a single-product pitch."],
+  calcEyebrow:"PH Bonus Calculator",
+  calcH2:"PH package referral calculator",
+  calcP:"Use this teaching tool to calculate PH referral income by referral percentage using EV x referral rate x P13.",
+    calcLabels:["Referral Package","Package EV","Number of Packages"],
+  calcResultP:"Choose 5%, 10%, or 15%, enter the EV and number of packages, then press calculate.",
+  incomeH2:"Understand the 6 business incomes clearly",
+  incomeP:"Adapted from the PH Plan: start with retail and referral, then explain pairing, matching, overriding, and the annual leadership reward in a simple sequence.",
+  incomeTitles:["1. Retail Profit","2. Referral Income","3. Pairing Income","4. Matching Income","5. Overriding Income","6. Annual Leadership Bonus"],
+  incomeRates:["Up to 50%","Up to 15% from EV","Up to 12% from EV","5% from upline daily income","Up to 10% from group EV","Up to 10% from EV"],
+  incomeBullets:[
+    ["Earn from the margin between package cost and retail selling price.","PH Plan examples show stronger profit as package size increases across EnhanCel53, FVF, and combo sets.","This is the fastest income to understand because it starts from direct product sales."],
+    ["Earn when you personally introduce a new agent package.","Use this to show how personal sharing creates the first business structure."],
+    ["Pairing is calculated from the weaker leg EV after left and right team volume is compared."],
+    ["Enjoy 5% of the immediate upline daily income from referral plus pairing bonus.","The immediate upline is determined after placement is completed."],
+    ["Qualified leaders override downline monthly group EV based on rank entitlement.","State Agent and National Agent lines can earn 1% when immediate downlines promote to the same rank."],
+    ["The company allocates 10% of generated EV into an annual reward pool for outstanding leaders.","Qualification starts from District Agent and uses monthly income points.","Every P20,000 monthly income earns 1 point, and each additional P20,000 earns another point."]
+  ],
+  incomeCallout:"<strong>Simple explanation:</strong> Retail creates the first cash flow, referral rewards personal introduction, pairing rewards balanced team volume, matching rewards placement linkage, overriding rewards rank-based group leadership, and the annual leadership bonus rewards outstanding yearly performance.",
+  closingEyebrow:"Closing Tactics",
+  closingH2:"Prepare your answer before the prospect asks tricky questions",
+  closingP:"Use this section to train confidence, handle objections calmly, and guide the prospect from doubt into a clear next step.",
+  slideBtns:["Mindset","MLM Question","Money Question","No Time","Need Think","Price Concern","Trust Check","Close"]
+});
+Object.assign(T.en.cTexts,{
+  "c1-1":"Do not defend too early.","c1-2":"When a prospect asks a tough question, first acknowledge it, then clarify what they are really worried about.","c1-3":"Answer with product, system, and proof.","c1-4":"Use product value, PH package logic, and simple income examples before asking them to decide.","c1-callout":"<strong>Control line:</strong> “That is a fair question. Before I answer, let me understand: are you worried about the product, the money, or whether you can do this?”",
+  "c2-h":"If they ask: “Is this MLM?”","c2-1":"Do not argue with the label. Bring the focus back to product, legal business structure, and customer value.","c2-2":"Say: “The important question is whether there is a real product, real demand, clear package value, and a fair reward plan.”","c2-3":"Then show the PH product packages and explain retail first before team income.",
+  "c3-h":"If they ask: “How much can I really earn?”","c3-1":"Do not promise income. Show them the calculation method and let the numbers stay realistic.","c3-2":"Start with referral income because it is easiest to verify.","c3-3":"Then explain that pairing, matching, overriding, and leadership bonus depend on activity, placement, and qualification.","c3-math":"<strong>Answer line:</strong> “Let us not guess income. Let us calculate one simple example first, then you decide whether this is worth starting properly.”",
+  "c4-h":"If they say: “I have no time.”","c4-1":"Agree first. Most people do not have extra time, so the system must be simple enough to start part-time.","c4-2":"Position the first step as product sharing, not full-time selling.","c4-3":"Ask for a small commitment: 3 product conversations or 3 prospect lists this week.",
+  "c5-h":"If they say: “I need to think about it.”","c5-1":"Do not pressure. Ask what part they need to think about: product, price, risk, timing, or confidence.","c5-2":"If they cannot name the issue, they are likely avoiding a decision.","c5-3":"Offer two starting paths: product-user first or business-builder package.","c5-callout":"<strong>Response:</strong> “Of course. So I can help properly, which part are you unsure about: product, budget, or whether you can do it?”",
+  "c6-h":"If they say: “The package is expensive.”","c6-1":"Separate cost from value.","c6-2":"Show what products they receive and how the EV connects to referral and team income.","c6-3":"Give a lower-risk option.","c6-4":"If Gold is too heavy, compare Bronze or Silver as a practical entry point.","c6-5":"Close on readiness.","c6-6":"Ask whether the concern is budget now or belief in the business.","c6-callout":"<strong>Question:</strong> “If the budget is solved, would you prefer to start as a user first or build this as a business?”",
+  "c7-h":"If they ask: “Can I trust this?”","c7-1":"Use proof, not hype: company background, product story, package details, and clear compensation structure.","c7-2":"Invite them to verify facts instead of forcing belief.","c7-3":"Trust grows when the explanation is transparent and not exaggerated.","c7-callout":"<strong>Answer line:</strong> “Do not believe because I say so. Check the product, the company, the package, and the plan. If those make sense, then we talk about how you start.”",
+  "c8-h":"Closing: Move from doubt to next action","c8-1":"Summarise their reason: health, side income, team-building, or leadership growth.","c8-2":"Give two clear choices instead of asking an open-ended question.","c8-3":"Close with a next action: choose package, book follow-up, make prospect list, or start product use.","c8-callout":"<strong>Closing line:</strong> “Based on what you told me, you do not need to decide everything today. You only need to choose your starting route: user first, or business builder?”"
+});
+Object.assign(T.zh,{
+  kpi:["6项事业收入","零售收入最高","对碰收入最高","年度领导奖池"],
+  incomeH2:"清楚说明6项事业收入",
+  incomeP:"根据PH Plan整理：先讲零售与推荐，再讲对碰、匹配、级差和年度领导奖金。",
+  incomeTitles:["1. 零售收益","2. 推荐收入","3. 对碰收入","4. 匹配收入","5. 级差收入","6. 年度领导奖金"],
+  incomeRates:["最高50%","EV最高15%","EV最高12%","上级日收入5%","团队EV最高10%","EV最高10%"],
+  incomeBullets:[
+    ["来自配套成本与零售售价之间的利润。","PH Plan示例显示，配套越高，EnhanCel53、FVF和组合套装的利润空间越明显。","这是最容易理解的第一层收入，因为从直接产品销售开始。"],
+    ["亲自推荐新代理配套时获得收入。","推荐比例按配套提升：Bronze 11%、Silver 13%、Gold 15%。","用来说明个人分享如何建立第一层事业基础。"],
+    ["对碰收入以左右团队较小边EV计算。","配套比例为Bronze 8%、Silver 10%、Gold 12%。","每日上限依配套而定：Bronze P13,000、Silver P32,500、Gold P78,000。"],
+    ["享有直属上级每日推荐加对碰收入的5%。","累计匹配收入最高为自己配套金额的300%。","直属上级会在安置完成后确定。"],
+    ["符合资格的领导可按职级享有下线每月团队EV级差。","主要职级比例为AA 2%、DA 4%、SA 6%、NA 8%。","SA与NA直属下线晋升同级时，可享同级1%级差。"],
+    ["公司每月拨出产生EV的10%进入年度领导奖池。","资格从District Agent开始，并以每月收入积分计算。","每P20,000月收入获得1分，之后每增加P20,000再加1分。"]
+  ],
+  incomeCallout:"<strong>简单讲法：</strong>零售带来第一笔现金流，推荐奖励个人介绍，对碰奖励左右团队平衡，匹配奖励安置关系，级差奖励职级领导力，年度领导奖金奖励全年优秀表现。",
+  slideBtns:["开场","零售","推荐","对碰","匹配","级差","年度奖金","收口"]
+});
+Object.assign(T.zh.cTexts,{
+  "c1-3":"先展示PH Plan的6项收入。","c1-4":"让对方明白收入路径是从零售、推荐，进入对碰、匹配、级差，最后到年度领导奖金。",
+  "c2-h":"零售收益：从产品利润开始","c2-1":"零售收入来自直接销售产品及配套与零售价之间的利润。","c2-2":"PH Plan将零售收入定位为最高50%。","c2-3":"先用零售建立信心，再进入团队收入说明。",
+  "c3-h":"推荐收入：奖励个人介绍","c3-1":"推荐收入来自亲自介绍代理配套的EV。","c3-2":"PH Plan显示Bronze 11%、Silver 13%、Gold 15%。","c3-3":"这会把产品分享和信任转换成第一层代理基础。","diagram-1":"Bronze 11%","diagram-2":"Silver 13%","diagram-3":"Gold 15%","diagram-4":"个人EV","c3-math":"<strong>例子：</strong>Gold EnhanCel53配套2,000EV x 15% x P13 = P3,900推荐收入。",
+  "c4-h":"对碰收入：奖励团队平衡业绩","c4-1":"对碰收入以左右团队较小边EV计算。","c4-2":"配套比例为Bronze 8%、Silver 10%、Gold 12%。","c4-3":"每日上限为Bronze P13,000、Silver P32,500、Gold P78,000。",
+  "c5-h":"匹配收入：直属上级日收入5%","c5-1":"匹配收入为直属上级每日推荐加对碰收入的5%。","c5-2":"累计最高可达自己配套金额的300%。","c5-3":"说明时要讲清楚直属上级会在安置完成后确定。",
+  "c6-h":"级差收入：奖励职级领导力","c6-1":"Area Agent","c6-2":"符合资格下线每月团队EV的2%。","c6-3":"District Agent","c6-4":"组织深化后享4%级差。","c6-5":"State Agent / National Agent","c6-6":"主要权益为6%至8%，PH Plan也显示同级1%级差。","c6-callout":"<strong>重点提醒：</strong>级差根据Sponsor Tree与每月团队EV计算，所以要先讲职级资格，再讲百分比。",
+  "c7-h":"年度领导奖金：全年奖池","c7-1":"公司拨出产生EV的10%作为年度领导奖池。","c7-2":"领导从District Agent开始符合资格，每P20,000月收入获得1分。","c7-3":"年度总奖池除以全年总积分，再按个人积分分配。","c7-callout":"<strong>PH Plan例子：</strong>2,000,000EV x 10% x P13 = P2,600,000年度奖池；若全年100分，每分为P26,000。",
+  "c8-h":"收口：回到适合怎样开始","c8-1":"如果想先快速理解，就从零售收益与推荐收入开始。","c8-2":"如果想建立团队，就说明对碰与匹配是下一层。","c8-3":"如果想走领导层，就展示级差收入与年度领导奖金。","c8-callout":"<strong>收口话术：</strong>“这个计划不是单一奖金，而是一条路径：销售、推荐、建立平衡业绩、配合安置、提升职级，并争取领导奖励。”"
+});
+function setText(id,v){const el=document.getElementById(id); if(el) el.textContent=v;}
+function setHTML(id,v){const el=document.getElementById(id); if(el) el.innerHTML=v;}
+function setLang(){
+  lang='en';
+  const t=T.en;
+  setText('brandTitle',t.brandTitle); setText('brandSub',t.brandSub); setText('offlineBadge',t.offlineBadge);
+  ['about','income','closing','academy','coach','calculator'].forEach((k,i)=>setText('tab-'+k,t.tabs[i]));
+  setText('about-eyebrow',t.aboutEyebrow); setText('about-h2',t.aboutH2); setText('about-p',t.aboutP);
+  setText('kpi1',t.kpi[0]); setText('kpi2',t.kpi[1]); setText('kpi3',t.kpi[2]); setText('kpi4',t.kpi[3]);
+  setText('about-sec1',t.aboutSec1); setText('pill-53',t.pill53); setText('pill-fvf',t.pillFvf); setText('pill-pb',t.pillPb);
+  setText('p53-1',t.p53[0]); setText('p53-2',t.p53[1]); setText('p53-3',t.p53[2]);
+  setText('fvf-1',t.fvf[0]); setText('fvf-2',t.fvf[1]); setText('fvf-3',t.fvf[2]);
+  setText('pb-1',t.pb[0]); setText('pb-2',t.pb[1]); setText('pb-3',t.pb[2]);
+  setText('about-sec2',t.aboutSec2); setText('brand-script-h',t.brandScriptH); setText('brand-script-p',t.brandScriptP);
+  setText('income-eyebrow',t.incomeEyebrow); setText('income-h2',t.incomeH2); setText('income-p',t.incomeP);
+  t.incomeTitles.forEach((title,i)=>{
+    const n=i+1;
+    setText('income'+n+'-title',title);
+    setText('income'+n+'-rate',t.incomeRates[i]);
+    (t.incomeBullets[i]||[]).forEach((bullet,j)=>setText('income'+n+'-'+(j+1),bullet));
+  });
+  setHTML('income-callout',t.incomeCallout);
+  setText('closing-eyebrow',t.closingEyebrow); setText('closing-h2',t.closingH2); setText('closing-p',t.closingP);
+  for(let i=1;i<=t.slideBtns.length;i++) setText('slidebtn'+i,t.slideBtns[i-1]);
+  Object.keys(t.cTexts).forEach(id=>{ if(id.includes('callout')||id.includes('math')) setHTML(id,t.cTexts[id]); else setText(id,t.cTexts[id]); });
+  setText('academy-eyebrow',t.academyEyebrow); setText('academy-h2',t.academyH2); setText('academy-p',t.academyP);
+  ['a1','a2','a3','a4','a5'].forEach((a,i)=>{setText(a+'-h',t.academy[i][0]); setText(a+'-p',t.academy[i][1]);});
+  setText('coach-eyebrow',t.coachEyebrow); setText('coach-h2',t.coachH2); setText('coach-p',t.coachP);
+  ['cp1','cp2','cp3','cp4'].forEach((c,i)=>{setText(c+'-h',t.coachPrompts[i][0]); setText(c+'-p',t.coachPrompts[i][1]);});
+  setText('coach-welcome',t.coachWelcome); document.getElementById('coachInput').placeholder=t.coachPlaceholder; setText('coach-send',t.coachSend); setText('coach-note',t.coachNote);
+  setText('calc-eyebrow',t.calcEyebrow); setText('calc-h2',t.calcH2); setText('calc-p',t.calcP); setText('calc-label1',t.calcLabels[0]); setText('calc-label2',t.calcLabels[1]); setText('calc-label3',t.calcLabels[2]); setText('calc-btn',t.calcBtn); setText('calc-result-h',t.calcResultH); if(!document.getElementById('calcResult').dataset.calculated){ setText('calc-result-p',t.calcResultP); }
+  document.documentElement.lang='en';
+}
+function coachReply(q){
+  const t=(q||'').trim(); if(!t) return lang==='zh'?'请先输入问题。':'Please type a question first.';
+  const zh=lang==='zh';
+  if(t.includes('开场')||t.toLowerCase().includes('open')||t.toLowerCase().includes('natural')) return zh?'你可以这样开场：『我先不急着讲奖金，我先让你看懂，为什么 EnhanCel 不只是卖产品，而是一套可长期经营的系统。』':'You can open like this: “I’m not rushing into bonuses first. I want you to see why EnhanCel is not just about selling products, but a system that can be built for the long term.”';
+  if(t.toLowerCase().includes('mlm')||t.includes('直销')||t.includes('传销')) return zh?'不要先跟着标签走。你可以说：『我更想让你先看的是，它有没有真实产品、有没有合理收入结构、有没有长期系统支持。』':'Do not follow the label first. You can say: “I want you to first look at whether it has real products, a reasonable income structure, and long-term system support.”';
+  if(t.includes('4')||t.toLowerCase().includes('downline')||t.includes('直推')) return zh?'解释 4 位直推时，不要讲成压力。你可以说：『系统建议你先建立 4 个核心点，因为这 4 个点，是你后面推荐奖金、领导奖金和团队分红的起点。』':'When explaining 4 downlines, do not make it sound like pressure. Say: “The system suggests building 4 core points first, because those 4 points become the starting base for referral, leadership, and group bonus later.”';
+  if(t.includes('复杂')||t.includes('听不懂')||t.includes('混乱')||t.toLowerCase().includes('complex')) return zh?'当对方觉得复杂，你就先讲顺序：第一，卖产品有零售；第二，推荐人有奖金；第三，团队复制有领导收益；第四，组织变大有团队分红；第五，做到领导层有全球分红。':'If the prospect feels it is too complex, pull it back to sequence: first retail, then referral, then leadership through duplication, then group bonus through growth, and finally global pool at leadership level.';
+  if(t.toLowerCase().includes('closing')||t.includes('收口')||t.includes('再考虑')||t.toLowerCase().includes('think about it')) return zh?'你可以这样收口：『你今天不用一次看完全部细节，你只需要先决定，你是想先从产品和零售开始，还是想直接用更完整的方式来建立长期收入结构？』':'You can close like this: “You do not need to decide every detail today. You only need to decide whether you want to start with product and retail first, or begin in a fuller way to build long-term structured income.”';
+  return zh?'你可以先把说明拉回简单顺序：先讲产品价值，再讲零售收益，再讲推荐奖金，然后才讲团队与领导收入。':'Bring the explanation back to a simple sequence: product value first, then retail, then referral, and only after that team and leadership income.';
+}
+function appendMsg(type,text){const log=document.getElementById('chatLog'); const div=document.createElement('div'); div.className='msg '+type; div.innerHTML=text.replace(/\n/g,'<br>'); log.appendChild(div); log.scrollTop=log.scrollHeight;}
+function sendCoach(){const input=document.getElementById('coachInput'); const q=input.value.trim(); if(!q) return; appendMsg('user',q); input.value=''; setTimeout(()=>appendMsg('ai',coachReply(q)),180);}
+function askCoachPreset(q){appendMsg('user',q); setTimeout(()=>appendMsg('ai',coachReply(q)),140);}
+document.getElementById('coachInput').addEventListener('keydown', function(e){ if(e.key==='Enter'&&!e.shiftKey){ e.preventDefault(); sendCoach(); }});
+function calculateIncome(){
+  const referralPct=Number(document.getElementById('myPackage').value||0);
+  const packageEV=Number(document.getElementById('downlineEV').value||0);
+  const evRate=13;
+  const count=Number(document.getElementById('downlineCount').value||0);
+  const referralPerPackage=packageEV*referralPct/100*evRate;
+  const totalReferral=referralPerPackage*count;
+  const result=document.getElementById('calcResult'); result.dataset.calculated='1';
+  result.innerHTML=`<h4>PH Referral Result</h4><div class="result-line">Referral percentage: <strong>${referralPct}%</strong></div><div class="result-line">Package EV: <strong>${packageEV.toLocaleString()}EV</strong></div><div class="result-line">EV conversion: <strong>P${evRate}</strong></div><div class="result-line">Calculation per package: <strong>${packageEV.toLocaleString()}EV x ${referralPct}% x P${evRate}</strong></div><div class="result-line">Referral income per package: <strong>P${referralPerPackage.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})}</strong></div><div class="result-line">Number of packages: <strong>${count}</strong></div><div class="result-line">Total referral income: <strong>P${totalReferral.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})}</strong></div><div class="callout" style="margin-top:12px"><strong>Teaching note:</strong> This calculator focuses on PH referral income only. Pairing, matching, overriding, and leadership bonus depend on structure and qualification.</div>`;
+}
+setLang('en');
+  </script>
+ </body>
+</html>
